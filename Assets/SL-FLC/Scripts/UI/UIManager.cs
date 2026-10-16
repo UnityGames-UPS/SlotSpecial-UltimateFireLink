@@ -30,7 +30,7 @@ public class UIManager : MonoBehaviour
     private Button Privacy_Button;
 
     [SerializeField]
-    internal Button Exit_Button;
+    private Button Exit_Button;
     [SerializeField]
     private GameObject Exit_Object;
     [SerializeField]
@@ -197,19 +197,19 @@ public class UIManager : MonoBehaviour
 
     [Header("Mobile and PC UI")]
     [SerializeField]
-    internal GameObject Mobile_UltimateFireLinkText;
+    private GameObject Mobile_UltimateFireLinkText;
     [SerializeField]
-    internal GameObject PC_UltimateFireLinkText;
+    private GameObject PC_UltimateFireLinkText;
     [SerializeField]
-    internal GameObject Mobile_MajorMiniMinor;
+    private GameObject Mobile_MajorMiniMinor;
     [SerializeField]
-    internal GameObject PC_MajorMiniMinor;
+    private GameObject PC_MajorMiniMinor;
     [SerializeField]
-    internal GameObject Mobile_ButonPanel;
+    private GameObject Mobile_ButonPanel;
     [SerializeField]
-    internal GameObject PC_Buttonpanel;
+    private GameObject PC_Buttonpanel;
     [SerializeField]
-    internal GameObject Mobile_TopBar;
+    private GameObject Mobile_TopBar;
 
     [Space]
     [SerializeField]
@@ -350,7 +350,7 @@ public class UIManager : MonoBehaviour
 
     // Mute state lives only on the AudioSources, so it must be re-applied to the
     // orientation's button set every time CanvasScalerSwitcher rebinds them.
-    internal void ApplyAudioState()
+    private void ApplyAudioState()
     {
         if (audioController)
         {
@@ -595,7 +595,7 @@ public class UIManager : MonoBehaviour
             StartCoroutine(ShowFreeSpinStartScreen(spins, m1, m2, m3));
         });
     }
-    internal void PopulateFreeSpinOption()
+    private void PopulateFreeSpinOption()
     {
         for (int i = 0; i < FreeSpinOptionButton.Length - 1; i++)
         {

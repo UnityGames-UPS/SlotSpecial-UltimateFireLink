@@ -25,12 +25,12 @@ public class SocketIOManager : MonoBehaviour
     internal UiData UIData = null;
     internal Root ResultData = null;
     internal Player PlayerData = null;
-    internal Root GambleData = null;
+    private Root GambleData = null;
     internal Features InitFeature = null;
-    internal List<List<int>> LineData = null;
+    private List<List<int>> LineData = null;
 
 
-    [SerializeField] internal List<string> bonusdata = null;
+    [SerializeField] private List<string> bonusdata = null;
     //WebSocket currentSocket = null;
     internal bool isResultdone = false;
 
@@ -39,7 +39,7 @@ public class SocketIOManager : MonoBehaviour
 
     private SocketManager manager;
 
-    [SerializeField] internal JSFunctCalls JSManager;
+    [SerializeField] private JSFunctCalls JSManager;
 
 
     protected string SocketURI = null;
@@ -53,9 +53,9 @@ public class SocketIOManager : MonoBehaviour
     protected string gameID = "SL-FLC";
     // protected string gameID = "";
 
-    internal bool isLoaded = false;
+    private bool isLoaded = false;
 
-    internal bool SetInit = false;
+    private bool SetInit = false;
 
     private bool isConnected = false; //Back2 Start
     private bool hasEverConnected = false;

@@ -13,12 +13,12 @@ public class FireResultSlot : MonoBehaviour
     [SerializeField] private Image DownImage;
     [SerializeField] internal TMP_Text NumText;
     [SerializeField] internal Image JackpotImage;
-    [SerializeField] internal ImageAnimation SideburnAnimation;
+    [SerializeField] private ImageAnimation SideburnAnimation;
 
     [SerializeField] internal float FixedSymbolScale = 1.8f;   // scale applied to a fixed (scatter) symbol
     [SerializeField] internal bool isFixed = false;
     [SerializeField] internal GameObject Slot;
-    [SerializeField] internal GameObject Filter;
+    [SerializeField] private GameObject Filter;
     private Tween alltweens;
 
     [SerializeField] private Image[] RestOftheimages;
@@ -47,7 +47,7 @@ public class FireResultSlot : MonoBehaviour
         }
     }
 
-    internal void ChangeData(Sprite imgToShow,Sprite imgUP,Sprite imgDown, double num =0)
+    private void ChangeData(Sprite imgToShow,Sprite imgUP,Sprite imgDown, double num =0)
     {
         ShowImage.sprite = imgToShow;
         UPImage.sprite = imgUP;

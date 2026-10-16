@@ -89,7 +89,7 @@ public class SlotBehaviour : MonoBehaviour
 
   [Header("Jackpot Labels")]
   [SerializeField]
-  internal Sprite[] JackpotSprites;   // mini/minor/major/mega label images, ordered to match InitFeature.jackpotMultipliers
+  private Sprite[] JackpotSprites;   // mini/minor/major/mega label images, ordered to match InitFeature.jackpotMultipliers
   [SerializeField]
   private float ScatterSymbolScale = 1.8f;   // scale applied to a scatter symbol when its value is shown
 
@@ -99,7 +99,7 @@ public class SlotBehaviour : MonoBehaviour
   [SerializeField]
   internal TMP_Text TotalBet_text;
   [SerializeField]
-  internal TMP_Text LineBet_text;
+  private TMP_Text LineBet_text;
   [SerializeField]
   internal TMP_Text TotalWin_text;
   [SerializeField] internal TMP_Text[] MiniMajorMinor;
@@ -141,7 +141,7 @@ public class SlotBehaviour : MonoBehaviour
   private Coroutine FreeSpinRoutine = null;
   private Coroutine tweenroutine;
   private Tween BalanceTween;
-  internal bool IsAutoSpin = false;
+  private bool IsAutoSpin = false;
   internal bool IsFreeSpin = false;
   private bool InsideFreeSpin = false;
   private bool IsSpinning = false;
@@ -673,7 +673,7 @@ public class SlotBehaviour : MonoBehaviour
 
   #region SlotSpin
   //starts the spin process
-  internal void StartSlots(bool autoSpin = false)
+  private void StartSlots(bool autoSpin = false)
   {
 
     if (audioController) audioController.PlaySpinButtonAudio();
@@ -934,7 +934,7 @@ public class SlotBehaviour : MonoBehaviour
     });
   }
 
-  internal void CheckWinPopups()
+  private void CheckWinPopups()
   {
     //  Debug.Log("dev_test" + SocketManager.ResultData.payload.winAmount+ "   0   " + currentTotalBet);
     if (SocketManager.ResultData.payload.winAmount >= currentTotalBet * 10)
@@ -959,7 +959,7 @@ public class SlotBehaviour : MonoBehaviour
     }
   }
 
-  internal void CheckBonusGame()
+  private void CheckBonusGame()
   {
     if (audioController) audioController.PlayWLAudio("bonusStart");
     StartCoroutine(_bonusManager.BonusStartupPage(SocketManager.ResultData.features.bonus.spinCount));                                                         // startBonus
@@ -999,7 +999,7 @@ public class SlotBehaviour : MonoBehaviour
   // The backend sends scatter values already multiplied by the per-line bet, so a jackpot arrives
   // as jackpotMultipliers[i] * bets[BetCounter] (matching the MiniMajorMinor panel), not the raw
   // multiplier. Compared with a tolerance since these are doubles.
-  internal int GetJackpotTier(double value)
+  private int GetJackpotTier(double value)
   {
     var jm = SocketManager.InitFeature?.jackpotMultipliers;
     var bets = SocketManager.InitialData?.bets;

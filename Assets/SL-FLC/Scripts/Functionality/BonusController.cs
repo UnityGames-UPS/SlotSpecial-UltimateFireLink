@@ -118,7 +118,7 @@ public class BonusController : MonoBehaviour
         }
         StartBonusRoutine = StartCoroutine(StartBonus(socketManager.ResultData.features.bonus.spinCount));
     }
-    internal IEnumerator StartBonus(int spinCount)
+    private IEnumerator StartBonus(int spinCount)
     {
         NoOFBanneropen = 0;
         WinAmount = 0;

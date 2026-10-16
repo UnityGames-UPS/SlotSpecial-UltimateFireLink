@@ -24,7 +24,7 @@ public class CanvasScalerSwitcher : MonoBehaviour
   private GameObject TheBgObj;
   [Header("UI Change For Apple")]
 
-  [SerializeField] internal GameObject MobileTopBar;
+  [SerializeField] private GameObject MobileTopBar;
   [SerializeField] private GameObject MobileBottomBar;
   [SerializeField] private GameObject MobileMajorMiniMinor;
   [SerializeField] private GameObject BonusCountUI;
@@ -75,10 +75,10 @@ public class CanvasScalerSwitcher : MonoBehaviour
   // offsets from stacking, and they blocked the second orientation from applying.
   private struct RectState
   {
-    public Vector2 anchorMin, anchorMax, pivot, anchoredPosition, sizeDelta, offsetMin, offsetMax;
-    public Vector3 localPosition, localScale;
+    private Vector2 anchorMin, anchorMax, pivot, anchoredPosition, sizeDelta, offsetMin, offsetMax;
+    private Vector3 localPosition, localScale;
 
-    public static RectState Capture(RectTransform rt)
+    internal static RectState Capture(RectTransform rt)
     {
       return new RectState
       {
@@ -94,7 +94,7 @@ public class CanvasScalerSwitcher : MonoBehaviour
       };
     }
 
-    public void ApplyTo(RectTransform rt)
+    internal void ApplyTo(RectTransform rt)
     {
       rt.anchorMin = anchorMin;
       rt.anchorMax = anchorMax;

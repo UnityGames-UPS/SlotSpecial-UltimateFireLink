@@ -6,9 +6,9 @@ using System;
 public class AudioController : MonoBehaviour
 {
   [SerializeField] private AudioSource bg_adudio;
-  [SerializeField] internal AudioSource audioPlayer_wl;
-  [SerializeField] internal AudioSource audioPlayer_button;
-  [SerializeField] internal AudioSource audioSpin_button;
+  [SerializeField] private AudioSource audioPlayer_wl;
+  [SerializeField] private AudioSource audioPlayer_button;
+  [SerializeField] private AudioSource audioSpin_button;
   [SerializeField] private AudioClip[] clips;
   [SerializeField] private AudioClip[] Bonusclips;
   [SerializeField] private AudioSource bg_audioBonus;
@@ -89,7 +89,7 @@ public class AudioController : MonoBehaviour
     source.mute = mute;
   }
 
-  internal void SwitchBGSound(bool isbonus)
+  private void SwitchBGSound(bool isbonus)
   {
     if (isbonus)
     {
@@ -147,7 +147,7 @@ public class AudioController : MonoBehaviour
 
   }
 
-  internal void PlayBonusAudio(string type)
+  private void PlayBonusAudio(string type)
   {
     audioPlayer_wl.loop = false;
     int index = 0;
@@ -186,13 +186,13 @@ public class AudioController : MonoBehaviour
     audioPlayer_wl.loop = false;
   }
 
-  internal void StopBonusAaudio()
+  private void StopBonusAaudio()
   {
     audioPlayer_Bonus.Stop();
     audioPlayer_Bonus.loop = false;
   }
 
-  internal void StopBgAudio()
+  private void StopBgAudio()
   {
     bg_adudio.Stop();
   }
